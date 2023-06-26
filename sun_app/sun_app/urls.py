@@ -17,11 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from veterinarios.views import agregar_veteri
+from veterinarios.views import agregar_veteri, ver_veteri, editar_veteri, eliminar_veteri
 from webapp.views import ver_veterinarios
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', ver_veterinarios, name='inicio'),
     path('agregar_veteri/', agregar_veteri),
+    path('ver_veteri/<int:idVeterinario>', ver_veteri),
+    path('editar_veteri/<int:idVeterinario>', editar_veteri),
+    path('eliminar_veteri/<int:idVeterinario>', eliminar_veteri),
 ]
