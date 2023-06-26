@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Veterinarios</title>
+</head>
+<body>
+<h1>Agregar Veterinario</h1>
+<div>
+    <form method="POST">
+        <table>
+            {{formulario}}
+        </table>
+        <input type="submit" value="Grabar">
+        {% csrf_token %}
+    </form>
+<div>
+    <a href="{% url 'inicio' %}">Regresar</a>
+</div>
+</div>
+</body>
+</html>
