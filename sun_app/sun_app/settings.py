@@ -75,22 +75,22 @@ WSGI_APPLICATION = 'sun_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+#DATABASES = {
+#  'default': {
+#      'ENGINE': 'django.db.backends.sqlite3',
+#      'NAME': BASE_DIR / 'db.sqlite3',
+#  }
+#}
 DATABASES = {
    'default': {
-       'ENGINE': 'django.db.backends.sqlite3',
-       'NAME': BASE_DIR / 'db.sqlite3',
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'NAME': 'bwpawhnu',
+       'USER': 'bwpawhnu',
+       'PASSWORD': 'AM0Fgv_Gsyj7PMQ7RoKNUjsaZgRhNXNM',
+       'HOST': 'babar.db.elephantsql.com',
+       'PORT': '5432',
    }
 }
-#DATABASES = {
-#   'default': {
-#       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#       'NAME': 'ueyudxqp',
-#       'USER': 'ueyudxqp',
-#       'PASSWORD': 'MkQkHSGwER6LRhyed6hUCUkflyB2Elg3',
-#       'HOST': 'stampy.db.elephantsql.com',
-#       'PORT': '5432',
-#   }
-#}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

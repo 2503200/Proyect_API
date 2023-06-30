@@ -9,6 +9,6 @@ from veterinarios.models import Veterinario
 def ver_veterinarios(request):
     canti_veteri = Veterinario.objects.count()
     pagina = loader.get_template('veterinarios.html')
-    lista_veteri = Veterinario.objects.all()
+    lista_veteri = Veterinario.objects.order_by('apellido','nombre')
     datos = {'cantidad': canti_veteri, 'veterinarios': lista_veteri}
     return HttpResponse(pagina.render(datos, request))
