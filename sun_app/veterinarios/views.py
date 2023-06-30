@@ -74,6 +74,5 @@ def generar_reporte (request):
     wb.save(response)
     return response
 
-    return
 
 
