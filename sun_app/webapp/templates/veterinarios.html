@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>Administracion</title>
+    <script src="https://kit.fontawesome.com/22ad93d1da.js" crossorigin="anonymous"></script>
+    <title>S.A.V.</title>
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-<h1>Sistema de Administración de Veterinarios</h1>
-<p>Cantidad de Veterinarios Registrados</p>
-<div>
-    <a href="agregar_veteri">Agregar Veterinario</a>
+<div class="panel panel-primary" align="center">
+    <div class="panel panel-primary" align="center">
+    <div class="panel-heading"></div>
+    <h1 class="display-5">Sistema de Administración de Veterinarios</h1>
+    </div>
+    <p>Cantidad de Veterinarios Registrados: {{cantidad}}</p>
+    </div>
 </div>
-<table>
+<div>
+    <a class="btn btn-primary" href="agregar_veteri/"><i class="fa-solid fa-user-plus"></i></a>
+</div>
+<div class="table-responsive" align="center">
+<table class="table table-hover table-bordered table-sm align-middle caption-top text-center table-condensed">
+    <caption>Lista de Personas</caption>
     <tr>
         <th>Id</th>
         <th>Nombre</th>
@@ -24,6 +33,7 @@
         <th>Consultorio</th>
         <th>Especialidad</th>
     </tr>
+    <tbody class="table-group-divider">
         {% for veterinario in veterinarios %}
             <tr>
                 <td>{{veterinario.id}}</td>
@@ -34,11 +44,13 @@
                 <td>{{veterinario.numero_celular}}</td>
                 <td>{{veterinario.consultorio.nombre}}</td>
                 <td>{{veterinario.especialidad.nombre}}</td>
-                <td><a class="btn btn-secondary" href="ver_veteri/{{veterinario.id}}"> Ver Veterinario</a></td>
-                <td><a class="btn btn-success" href="editar_veteri/{{veterinario.id}}"> Editar Veterinario</a></td>
-                <td><a class="btn btn-danger" href="eliminar_veteri/{{veterinario.id}}"> Eliminar Veterinario</a></td>
+                <td><a class="btn btn-secondary" href="ver_veteri/{{veterinario.id}}"><i class="fa-solid fa-eye"></i></a></td>
+                <td><a class="btn btn-success" href="editar_veteri/{{veterinario.id}}"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td><a class="btn btn-danger" href="eliminar_veteri/{{veterinario.id}}"><i class="fa-solid fa-eraser"></i></a></td>
             </tr>
         {% endfor %}
+    </tbody>
 </table>
+        </div>
 </body>
 </html>
