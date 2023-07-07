@@ -16,6 +16,14 @@ class Especialidad(models.Model):
     def __str__(self):
         return f'{self.nombre}'
 
+class Horario(models.Model):
+    dia_semana = models.CharField(max_length=20, null=True)
+    hora_inicio = models.TimeField()
+    hora_fin = models.TimeField()
+
+    def __str__(self):
+        return f'{self.dia_semana} - {self.hora_inicio} a {self.hora_fin}'
+
     # Create your models here.
 class Veterinario(models.Model):
     SEXO = [
@@ -30,6 +38,7 @@ class Veterinario(models.Model):
     activo = models.BooleanField(default=True)
     consultorio = models.ForeignKey(Consultorio, on_delete=models.SET_NULL, null=True)
     especialidad = models.ForeignKey(Especialidad, on_delete=models.SET_NULL, null=True)
+    horario = models.ForeignKey(Horario, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return f'id: {self.id} - {self.nombre} {self.apellido}'

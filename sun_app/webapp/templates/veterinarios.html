@@ -33,6 +33,7 @@
         <th>Numero Celular</th>
         <th>Consultorio</th>
         <th>Especialidad</th>
+        <th>Horario</th>
     </tr>
     <tbody class="table-group-divider">
         {% for veterinario in veterinarios %}
@@ -45,6 +46,7 @@
                 <td>{{veterinario.numero_celular}}</td>
                 <td>{{veterinario.consultorio.nombre}}</td>
                 <td>{{veterinario.especialidad.nombre}}</td>
+                <td>{{veterinario.horario.dia_semana}}</td>
                 <td><a class="btn btn-secondary" href="ver_veteri/{{veterinario.id}}"><i class="fa-solid fa-eye"></i></a></td>
                 <td><a class="btn btn-success" href="editar_veteri/{{veterinario.id}}"><i class="fa-solid fa-pen-to-square"></i></a></td>
                 <td><a class="btn btn-danger" href="eliminar_veteri/{{veterinario.id}}"><i class="fa-solid fa-eraser"></i></a></td>
