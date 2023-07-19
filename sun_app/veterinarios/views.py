@@ -3,9 +3,12 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template import loader
 from openpyxl.workbook import Workbook
+from rest_framework import viewsets, permissions
 
 from veterinarios.forms import VeterinarioFormulario
 from veterinarios.models import Veterinario
+from veterinarios.serializers import vete_Serializer
+
 
 #VeterinarioFormulario = modelform_factory(Veterinario, exclude=[])
 # Create your views here.
@@ -74,5 +77,11 @@ def generar_reporte (request):
     wb.save(response)
     return response
 
-
+class vete_ViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Veterinario.objects.all().order_by('nombre')
+    serializer_class = vete_Serializer
+    permission_classes = [permissions.IsAuthenticated]
 
